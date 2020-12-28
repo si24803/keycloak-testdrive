@@ -1,0 +1,12 @@
+{
+  "realm": "almada234",
+  "auth-server-url": "http://localhost:8880/auth/",
+  "ssl-required": "external",
+  "resource": "keycloak-test",
+  "public-client": true,
+  "confidential-port": 0,
+  "enable-cors": true,
+  "cors-max-age": 1000,
+  "cors-allowed-methods": "POST, PUT, DELETE, GET",
+  "cors-exposed-headers": "WWW-Authenticate, My-custom-exposed-Header"
+}

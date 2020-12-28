@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  keycloak:
+    image: almada234/keycloak:latest
+    build: 
+      #dockerfile: ./keycloak/Dockerfile
+      context: ./keycloak
+      args:
+        - KEYCLOAK_ADMIN_USER=${KEYCLOAK_ADMIN:-'admin'}
+        - KEYCLOAK_ADMIN_PASS=${KEYCLOAK_ADMIN_PASS:-'ola123'}
+    ports:
+      - ${HTTP_PORT:-8080}:8080
+      - ${HTTPS_PORT:-8443}:8443
+      - ${CONTROL_PORT:-9990}:9990
+    networks:
+      - secure
+
+networks:
+  secure:
